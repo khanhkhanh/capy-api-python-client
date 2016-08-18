@@ -1,22 +1,22 @@
-import requests
+from tasks import verify
 
 
 class PuzzleClient(object):
+    url = "https://jp.api.capy.me/puzzle/verify"
 
     def __init__(self, capy_privatekey, timeout=3):
         self.capy_privatekey = capy_privatekey
         self.timeout = timeout
 
     def verify(self, capy_challengekey, capy_answer):
-        url = "https://jp.api.capy.me/puzzle/verify"
-        params = {
-            "capy_challengekey": capy_challengekey,
-            "capy_privatekey": self.capy_privatekey,
-            "capy_answer": capy_answer
-        }
+        verify(self.capy_privatekey, capy_challengekey, capy_answer, self.url, self.timeout)
 
-        try:
-            result = requests.post(url, params, timeout=self.timeout)
-            return result
-        except:
-            return "Connection error"
+    def verify_async(self, capy_challengekey, capy_answer):
+        verify.apply_async(self.capy_privatekey, capy_challengekey, capy_answer, self.url, self.timeout)
+
+
+client = PuzzleClient("a")
+response = "fuck"
+
+client.verify_async("b", "c")
+print response
