@@ -1,7 +1,7 @@
-Capy API Client Library for Python
+## Capy API Client Library for Python
 
 
-1. Sample implementation for Puzzle CAPTCHA
+### 1. Sample implementation for Puzzle CAPTCHA
 
 ```
 from capy_api.puzzle import PuzzleClient
@@ -23,7 +23,7 @@ Note:
 =======================================================================
 
 
-2. Sample implementation for Avatar CAPTCHA
+### 2. Sample implementation for Avatar CAPTCHA
 
 ```
 from capy_api.avatar import AvatarClient
@@ -47,7 +47,7 @@ Note:
 =======================================================================
 
 
-3. Sample implementation for Realtime Blacklist
+### 3. Sample implementation for Realtime Blacklist
 
 ```
 from capy_api.blacklist import BlacklistClient
@@ -69,7 +69,7 @@ Note:
 =======================================================================
 
 
-4. Sample implementation for Risk-Based Authentication
+### 4. Sample implementation for Risk-Based Authentication
 
 
 ```
